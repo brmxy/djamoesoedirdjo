@@ -1,8 +1,34 @@
 import { ArchiveIcon } from '@radix-ui/react-icons';
+import { gsap } from 'gsap';
+import { useLayoutEffect, useRef } from 'react';
 
-export default function Header() {
+export default function Header({
+  timeline: tl
+}: {
+  timeline: gsap.core.Timeline;
+}) {
+  const header = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      tl.to(header.current, {
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.15,
+        ease: 'expo.out'
+      });
+    }, [header.current]);
+
+    return () => {
+      ctx.revert();
+    };
+  }, [tl]);
+
   return (
-    <header className="sticky left-0 top-0 z-50 w-full border-b bg-background/60 backdrop-blur-sm">
+    <header
+      className="sticky left-0 top-0 z-50 w-full border-b bg-background/60 opacity-0 backdrop-blur-sm"
+      ref={header}
+    >
       <div className="flex max-h-14 items-center justify-between">
         <div className="flex items-center">
           <a

@@ -9,11 +9,11 @@ const tl = gsap.timeline();
 function App() {
   return (
     <>
-      <Loader tl={tl} />
-      <main className="relative flex min-h-screen flex-col bg-primary opacity-0">
-        <Header />
+      <Loader timeline={tl} />
+      <main className="relative flex min-h-screen flex-col">
+        <Header timeline={tl} />
         <ScrollableLayout>
-          <Home tl={tl} />
+          <Home timeline={tl} />
         </ScrollableLayout>
       </main>
     </>

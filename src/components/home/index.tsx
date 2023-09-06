@@ -1,7 +1,8 @@
 import { useRef } from 'react';
+import FirstSection from './first-section';
 
 // eslint-disable-next-line no-undef
-export default function Home(_props: { tl: gsap.core.Timeline }) {
+export default function Home(_props: { timeline: gsap.core.Timeline }) {
   const home = useRef<HTMLDivElement>(null);
 
   // useLayoutEffect(() => {
@@ -13,5 +14,9 @@ export default function Home(_props: { tl: gsap.core.Timeline }) {
   //   };
   // }, [tl]);
 
-  return <div ref={home} />;
+  return (
+    <div className="flex flex-1 flex-col" ref={home}>
+      <FirstSection />
+    </div>
+  );
 }

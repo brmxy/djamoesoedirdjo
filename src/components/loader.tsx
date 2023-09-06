@@ -1,16 +1,19 @@
 import gsap from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
 
-export default function Loader({ tl }: { tl: gsap.core.Timeline }) {
+export default function Loader({
+  timeline: tl
+}: {
+  timeline: gsap.core.Timeline;
+}) {
   const loader = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       tl.add(scene.chars())
         .add(scene.bars(), '-=0.5')
-        .set(loader.current, { display: 'none' })
-        .add(scene.revealMain());
-    }, ['#root', loader.current, 'main']);
+        .set(loader.current, { display: 'none' });
+    }, [loader.current]);
 
     return () => {
       ctx.revert();
@@ -87,19 +90,6 @@ const scene = {
       stagger: 0.1,
       ease: 'power4.inOut',
       y: '-100%'
-    });
-
-    return tl;
-  },
-  revealMain() {
-    const tl = gsap.timeline();
-
-    tl.to('main', {
-      backgroundColor: 'var(--color-background)',
-      opacity: 1,
-      duration: 0.5,
-      delay: 0.15,
-      ease: 'expo.out'
     });
 
     return tl;
