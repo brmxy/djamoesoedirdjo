@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://djamoesoedirdjo.ybram.xyz/sitemap.xml
