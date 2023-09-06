@@ -3,11 +3,10 @@
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { type PropsWithChildren } from 'react';
-import { useIsomorphicLayoutEffect } from 'usehooks-ts';
+import { useLayoutEffect, type PropsWithChildren } from 'react';
 
 export default function ScrollableLayout({ children }: PropsWithChildren) {
-  useIsomorphicLayoutEffect(() => {
+  useLayoutEffect(() => {
     void (async () => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default;
       // @ts-ignore

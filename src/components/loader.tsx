@@ -1,28 +1,25 @@
 import gsap from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
 
-export default function Loader() {
+export default function Loader({ tl }: { tl: gsap.core.Timeline }) {
   const loader = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
-
       tl.add(scene.chars())
-        .add(scene.bars(), '-=0.75')
-        .set('main', { background: 'var(--color-background) !important' })
-        .set('main', { visibility: 'visible' })
-        .set(loader.current, { display: 'none' });
-    }, loader);
+        .add(scene.bars(), '-=0.5')
+        .set(loader.current, { display: 'none' })
+        .add(scene.revealMain());
+    }, ['#root', loader.current, 'main']);
 
     return () => {
       ctx.revert();
     };
-  }, []);
+  }, [tl]);
 
   return (
     <div
-      className="fixed inset-0 z-[999] h-full w-full bg-background/60 backdrop-blur-sm"
+      className="pointer-events-none fixed inset-0 z-[999] h-full w-full bg-background/60 backdrop-blur-sm"
       ref={loader}
     >
       <div className="relative h-full w-full">
@@ -90,6 +87,19 @@ const scene = {
       stagger: 0.1,
       ease: 'power4.inOut',
       y: '-100%'
+    });
+
+    return tl;
+  },
+  revealMain() {
+    const tl = gsap.timeline();
+
+    tl.to('main', {
+      backgroundColor: 'var(--color-background)',
+      opacity: 1,
+      duration: 0.5,
+      delay: 0.15,
+      ease: 'expo.out'
     });
 
     return tl;
