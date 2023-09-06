@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Loader />
-      <main className="invisible">
+      <main className="invisible bg-primary">
         <ScrollableLayout>
           <Home />
         </ScrollableLayout>

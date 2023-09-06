@@ -10,6 +10,7 @@ export default function Loader() {
 
       tl.add(scene.chars())
         .add(scene.bars(), '-=0.75')
+        .set('main', { background: 'var(--color-background) !important' })
         .set('main', { visibility: 'visible' })
         .set(loader.current, { display: 'none' });
     }, loader);
@@ -70,6 +71,7 @@ const scene = {
         '.chars',
         {
           y: -40,
+          delay: 0.15,
           opacity: 0,
           duration: 0.5,
           stagger: 0.05,
