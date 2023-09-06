@@ -43,6 +43,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'eslint-comments/require-description': 'off',
     'no-console': 'off',
+    'react/no-array-index-key': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
   }
 };
