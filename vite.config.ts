@@ -12,8 +12,7 @@ export default defineConfig({
           'Nimbus Sans D OT': {
             src: './assets/nimbus-sans-d-ot-*',
             transform(font) {
-              font.weight =
-                font.basename === 'nimbus-sans-d-ot-700' ? 700 : 400;
+              font.weight = font.basename.split('-').pop();
               font.style = 'normal';
               return font;
             }
