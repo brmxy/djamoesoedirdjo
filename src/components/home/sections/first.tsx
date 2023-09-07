@@ -37,7 +37,7 @@ export default function FirstSection({
 
 function Marquee() {
   return (
-    <div className="pointer-events-none absolute inset-1/2 flex h-fit w-full -translate-x-1/2 -translate-y-1/2 flex-col flex-nowrap gap-6 overflow-hidden px-8 pb-20 lg:pb-0 [&_h3]:pointer-events-none [&_h3]:w-max [&_h3]:text-6xl [&_h3]:font-bold [&_h3]:uppercase [&_h3]:text-primary/90 [&_h3]:md:text-8xl">
+    <div className="pointer-events-none absolute inset-1/2 flex h-fit w-full -translate-x-1/2 -translate-y-1/2 flex-col flex-nowrap gap-6 overflow-hidden pb-20 lg:pb-0 [&_h3]:pointer-events-none [&_h3]:w-max [&_h3]:text-6xl [&_h3]:font-bold [&_h3]:uppercase [&_h3]:text-primary/90 [&_h3]:md:text-8xl">
       <h3 className="first">Menghadirkan Cita Rasa Tradisional</h3>
       <h3 className="second">Dibalut Dengan Konsep Kekinian</h3>
     </div>
