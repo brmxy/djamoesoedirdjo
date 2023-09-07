@@ -1,22 +1,14 @@
-import { useRef } from 'react';
-import FirstSection from './first-section';
+import { FirstSection } from './sections';
 
-// eslint-disable-next-line no-undef
-export default function Home(_props: { timeline: gsap.core.Timeline }) {
-  const home = useRef<HTMLDivElement>(null);
-
-  // useLayoutEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //   }, [home.current]);
-
-  //   return () => {
-  //     ctx.revert();
-  //   };
-  // }, [tl]);
-
+export default function Home({
+  timeline: tl
+}: {
+  // eslint-disable-next-line no-undef
+  timeline: gsap.core.Timeline;
+}) {
   return (
-    <div className="flex flex-1 flex-col" ref={home}>
-      <FirstSection />
+    <div className="border-b" style={{ height: 'calc(100vh - 3rem)' }}>
+      <FirstSection timeline={tl} />
     </div>
   );
 }
