@@ -24,11 +24,11 @@ export default function FirstSection({
       ref={section}
     >
       <Marquee />
-      <div className="relative mb-20 flex aspect-square h-[400px] items-center justify-center md:h-[480px] lg:mb-0 lg:h-[512px]">
+      <div className="relative mb-20 flex aspect-square w-full items-center justify-center md:w-[480px] lg:mb-0 lg:w-[512px] max-w-sm md:max-w-none">
         <img
           alt="Beras Kencur | Djamoe Soedirdjo"
           className="pointer-events-none h-full w-full object-cover"
-          src="https://res.cloudinary.com/yarabramasta/image/upload/f_webp,q_auto,h_640/v1/djamoesoedirdjo/beras-kencur-vertical-transparent-square"
+          src="https://res.cloudinary.com/yarabramasta/image/upload/f_webp,q_auto/v1/djamoesoedirdjo/beras-kencur-vertical-transparent-square"
         />
       </div>
     </section>
