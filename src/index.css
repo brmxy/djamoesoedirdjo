@@ -26,6 +26,6 @@
   }
 
   body {
-    @apply min-h-screen bg-background font-sans text-base font-normal text-foreground antialiased max-w-screen overflow-x-hidden;
+    @apply min-h-screen bg-background font-sans text-base font-normal text-foreground antialiased w-screen overflow-x-hidden;
   }
 }
