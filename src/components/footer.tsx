@@ -30,7 +30,7 @@ export default function Footer(_props: {
               Grab Food (Kota Malang)
             </Link>
             <Link href="https://gofood.link/u/9P8O">GoFood (Kota Malang)</Link>
-            <Link href="http://wa.me/081217230001">+62 812-1723-0001</Link>
+            <Link href="http://wa.me/081217230001">+62 812-1723-0001 (WhatsApp)</Link>
           </li>
           <li className="flex-1">
             <h3>Café</h3>
