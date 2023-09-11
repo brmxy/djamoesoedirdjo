@@ -5,7 +5,7 @@ export default function Footer(_props: {
   timeline: gsap.core.Timeline;
 }) {
   return (
-    <footer className="flex flex-col">
+    <footer className="relative flex flex-col">
       <div className="flex flex-col border-b md:flex-row">
         <div className="flex flex-col gap-2 border-b p-8 md:border-b-0 md:border-r">
           <h3 className="text-xl font-bold">
@@ -30,7 +30,9 @@ export default function Footer(_props: {
               Grab Food (Kota Malang)
             </Link>
             <Link href="https://gofood.link/u/9P8O">GoFood (Kota Malang)</Link>
-            <Link href="http://wa.me/081217230001">+62 812-1723-0001 (WhatsApp)</Link>
+            <Link href="http://wa.me/081217230001">
+              +62 812-1723-0001 (WhatsApp)
+            </Link>
           </li>
           <li className="flex-1">
             <h3>Café</h3>

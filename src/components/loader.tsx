@@ -28,7 +28,10 @@ export default function Loader({
       <div className="relative h-full w-full">
         <div className="absolute inset-0 flex h-full w-full flex-row">
           {Array.from({ length: 6 }).map((_, i) => (
-            <div className="bars flex-1 bg-primary" key={i} />
+            <div
+              className="bars tranform-gpu flex-1 bg-primary will-change-transform"
+              key={i}
+            />
           ))}
         </div>
         <div className="relative flex h-full w-full items-center justify-center">

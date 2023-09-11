@@ -1,14 +1,18 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import { useLayoutEffect, type PropsWithChildren } from 'react';
+import { type PropsWithChildren } from 'react';
+import { useIsomorphicLayoutEffect } from 'usehooks-ts';
 
 export default function ScrollableLayout({ children }: PropsWithChildren) {
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     void (async () => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default;
       // @ts-ignore
-      const _locomotiveScroll = new LocomotiveScroll();
+      const _locomotiveScroll = new LocomotiveScroll({
+        multiplier: 1.5,
+        lerp: 0.3
+      });
     })();
   }, []);
 
