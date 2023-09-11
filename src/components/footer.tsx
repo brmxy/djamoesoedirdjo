@@ -21,17 +21,17 @@ export default function Footer(_props: {
           <li>
             <h3>Sosmed</h3>
             <Link href="https://www.instagram.com/kedai_djamoesoedirdjo/">
-              Instagram
+              <span className="underline">Instagram</span>
             </Link>
           </li>
           <li>
             <h3>Order</h3>
             <Link href="https://food.grab.com/id/id/restaurant/djamoe-soedirdjo-pandanwangi-delivery/IDGFSTI00001dqs">
-              Grab Food (Kota Malang)
+              <span className="underline">Grab Food</span> (Kota Malang)
             </Link>
-            <Link href="https://gofood.link/u/9P8O">GoFood (Kota Malang)</Link>
+            <Link href="https://gofood.link/u/9P8O"><span className="underline">GoFood</span> (Kota Malang)</Link>
             <Link href="http://wa.me/081217230001">
-              +62 812-1723-0001 (WhatsApp)
+              <span className="underline">+62 812-1723-0001</span> (WhatsApp)
             </Link>
           </li>
           <li className="flex-1">
